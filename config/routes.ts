@@ -25,6 +25,12 @@
 		icon: 'HomeOutlined',
 	},
 	{
+		path: '/laptrinhweb02',
+		name: 'Khải Đinh',
+		component: './LapTrinhWeb02',
+		icon: 'PlusCircleOutlined',
+	},
+	{
 		path: '/gioi-thieu',
 		name: 'About',
 		component: './TienIch/GioiThieu',
