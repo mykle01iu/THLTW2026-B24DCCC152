@@ -1,4 +1,6 @@
-﻿export default [
+﻿import component from "@/locales/en-US/component";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -29,6 +31,29 @@
 		name: 'Khải Đinh',
 		component: './LapTrinhWeb02',
 		icon: 'PlusCircleOutlined',
+	},
+	// {
+	// 	path: '/cuahang',
+	// 	name: 'Cửa Hàng',
+	// 	icon: 'ShoppingOutlined',
+	// 	component: './CuaHang',
+	// },
+	// {
+	// 	path: '/donhang',
+	// 	name: 'Đơn Hàng',
+	// 	icon: 'ShoppingOutlined',
+	// 	component: './DonHang',
+	// },
+	{
+		path:'/trochoi',
+		name: 'Trò chơi',
+		icon: 'RadarChartOutlined',
+		component: './TroChoi',
+	},
+	{
+		path:'/quanlytiendomonhoc',
+		name: 'Quản Lý Môn Học',
+		component: './QuanLyMonHoc',
 	},
 	{
 		path: '/gioi-thieu',

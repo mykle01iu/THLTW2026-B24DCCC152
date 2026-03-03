@@ -8,19 +8,25 @@ import {
     InputNumber,
     message,
     Popconfirm,
+    Tag,    
 } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 const LapTrinhWeb02 = () => {
     const [sanPham, setSanPham] = useState([
-        { id: 1, name: "Laptop Dell XPS 13", price: 25000000, quantity: 10 },
-        { id: 2, name: "iPhone 15 Pro Max", price: 30000000, quantity: 15 },
-        { id: 3, name: "Samsung Galaxy S24", price: 22000000, quantity: 20 },
-        { id: 4, name: "iPad Air M2", price: 18000000, quantity: 12 },
-        { id: 5, name: "MacBook Air M3", price: 28000000, quantity: 8 },
+        { id: 1, name: "Laptop Dell XPS 13", category: 'Laptop', price: 25000000, quantity: 10 },
+        { id: 2, name: "iPhone 15 Pro Max", category: 'Điện thoại', price: 30000000, quantity: 15 },
+        { id: 3, name: "Samsung Galaxy S24", category: 'Điện thoại', price: 22000000, quantity: 20 },
+        { id: 4, name: "iPad Air M2", category: 'Máy tính bảng', price: 18000000, quantity: 12 },
+        { id: 5, name: "MacBook Air M3", category: 'Laptop', price: 28000000, quantity: 8 },
+        { id: 6, name: 'AirPods Pro 2', category: 'Phụ kiện', price: 6000000, quantity: 0 },
+        { id: 7, name: 'Samsung Galaxy Tab S9', category: 'Máy tính bảng', price: 15000000, quantity: 7 },
+        { id: 8, name: 'Logitech MX Master 3', category: 'Phụ kiện', price: 2500000, quantity: 25 }, 
     ]);
 
     const [open, setOpen] = useState(false);
     const [keyword, setKeyword] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
 
     const sanPhamHienThi = sanPham.filter((item) =>
         item.name.toLowerCase().includes(keyword.toLowerCase())
@@ -37,6 +43,7 @@ const LapTrinhWeb02 = () => {
             {
                 id: Date.now(),
                 name: values.name,
+                category: values.category,
                 price: values.price,
                 quantity: values.quantity,
             },
@@ -48,11 +55,15 @@ const LapTrinhWeb02 = () => {
     const columns = [
         {
             title: "STT",
-            render: (_, __, index) => index + 1,
+            render: (_, __, index) => index + 1 + (currentPage - 1) * 5 ,
         },
         {
             title: "Tên sản phẩm",
             dataIndex: "name",
+        },
+        {
+            title: "Loại",
+            dataIndex: "category",
         },
         {
             title: "Giá",
@@ -62,6 +73,20 @@ const LapTrinhWeb02 = () => {
         {
             title: "Số lượng",
             dataIndex: "quantity",
+        },
+        {
+            title: "Trạng thái",
+            render: (_, record) => {
+                if(record.quantity > 10) {
+                    return <Tag color="green">Còn hàng</Tag>
+                }
+                if(record.quantity >= 1 && record.quantity <= 10) {
+                    return <Tag color="yellow">Sắp hết</Tag>
+                }
+                else {
+                    return <Tag color="red">Hết hàng</Tag>
+                }
+            }
         },
         {
             title: "Thao tác",
@@ -88,6 +113,7 @@ const LapTrinhWeb02 = () => {
                 type="primary"
                 style={{ marginLeft: 10, marginBottom: 10 }}
                 onClick={() => setOpen(true)}
+                icon={<PlusOutlined/>}
             >
                 Thêm sản phẩm
             </Button>
@@ -96,7 +122,8 @@ const LapTrinhWeb02 = () => {
                 columns={columns}
                 dataSource={sanPhamHienThi}
                 rowKey="id"
-            />
+                pagination={{pageSize: 5, onChange: (page) => setCurrentPage(page)}}
+            />  
 
             <Modal
                 title="Thêm sản phẩm"
@@ -111,6 +138,14 @@ const LapTrinhWeb02 = () => {
                         rules={[{ required: true, message: "Hãy nhập tên sản phẩm" }]}
                     >
                         <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Loại"
+                        name="category"
+                        rules={[{required: true, message: "Hãy nhập loại sản phẩm"}]}
+                    >
+                        <Input/>
                     </Form.Item>
 
                     <Form.Item
