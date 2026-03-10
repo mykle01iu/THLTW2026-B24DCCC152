@@ -73,6 +73,16 @@ export default [
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
 	},
+	{
+		path: '/oantuxi',
+		name: 'OanTuXi',
+		component: './OanTuXi',
+	},
+	{
+		path: '/quanlycauhoi',
+		name: 'Quản Lý Câu Hỏi',
+		component: './Bai2',
+	},
 
 	// DANH MUC HE THONG
 	// {
