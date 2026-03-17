@@ -83,6 +83,11 @@ export default [
 		name: 'Quản Lý Câu Hỏi',
 		component: './Bai2',
 	},
+	{
+		path: '/dichvu',
+		name: 'Dịch Vụ Của Chúng Tôi',
+		component: './DichVu'
+	},
 
 	// DANH MUC HE THONG
 	// {
