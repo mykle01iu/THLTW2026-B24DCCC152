@@ -88,6 +88,11 @@ export default [
 		name: 'Dịch Vụ Của Chúng Tôi',
 		component: './DichVu'
 	},
+	{
+		path: '/th04',
+		name: 'TH04',
+		component: './TH04'
+	},
 
 	// DANH MUC HE THONG
 	// {
