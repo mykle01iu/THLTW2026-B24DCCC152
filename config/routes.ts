@@ -98,6 +98,11 @@ export default [
 		name: 'TH05',
 		component: './TH05'
 	},
+	{
+		path: 'th06',
+		name: 'TH06',
+		component: './TH06'
+	},
 
 	// DANH MUC HE THONG
 	// {
