@@ -27,6 +27,11 @@ export default [
 		icon: 'HomeOutlined',
 	},
 	{
+		path: '/ktgk',
+		name: 'KTGK',
+		component: './KTGK'
+	},
+	{
 		path: '/laptrinhweb02',
 		name: 'Khải Đinh',
 		component: './LapTrinhWeb02',
