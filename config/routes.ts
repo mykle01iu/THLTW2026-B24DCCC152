@@ -32,6 +32,11 @@ export default [
 		component: './KTGK'
 	},
 	{
+		path: '/th07',
+		name: 'TH07',
+		component: './TH07'
+	},
+	{
 		path: '/laptrinhweb02',
 		name: 'Khải Đinh',
 		component: './LapTrinhWeb02',
