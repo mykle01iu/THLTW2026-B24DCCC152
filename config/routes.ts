@@ -1,4 +1,6 @@
-﻿export default [
+﻿import component from "@/locales/en-US/component";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -25,6 +27,45 @@
 		icon: 'HomeOutlined',
 	},
 	{
+		path: '/ktgk',
+		name: 'KTGK',
+		component: './KTGK'
+	},
+	{
+		path: '/th07',
+		name: 'TH07',
+		component: './TH07'
+	},
+	{
+		path: '/laptrinhweb02',
+		name: 'Khải Đinh',
+		component: './LapTrinhWeb02',
+		icon: 'PlusCircleOutlined',
+	},
+	// {
+	// 	path: '/cuahang',
+	// 	name: 'Cửa Hàng',
+	// 	icon: 'ShoppingOutlined',
+	// 	component: './CuaHang',
+	// },
+	// {
+	// 	path: '/donhang',
+	// 	name: 'Đơn Hàng',
+	// 	icon: 'ShoppingOutlined',
+	// 	component: './DonHang',
+	// },
+	{
+		path:'/trochoi',
+		name: 'Trò chơi',
+		icon: 'RadarChartOutlined',
+		component: './TroChoi',
+	},
+	{
+		path:'/quanlytiendomonhoc',
+		name: 'Quản Lý Môn Học',
+		component: './QuanLyMonHoc',
+	},
+	{
 		path: '/gioi-thieu',
 		name: 'About',
 		component: './TienIch/GioiThieu',
@@ -41,6 +82,36 @@
 		name: 'TodoList',
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
+	},
+	{
+		path: '/oantuxi',
+		name: 'OanTuXi',
+		component: './OanTuXi',
+	},
+	{
+		path: '/quanlycauhoi',
+		name: 'Quản Lý Câu Hỏi',
+		component: './Bai2',
+	},
+	{
+		path: '/dichvu',
+		name: 'Dịch Vụ Của Chúng Tôi',
+		component: './DichVu'
+	},
+	{
+		path: '/th04',
+		name: 'TH04',
+		component: './TH04'
+	},
+	{
+		path: 'th05',
+		name: 'TH05',
+		component: './TH05'
+	},
+	{
+		path: 'th06',
+		name: 'TH06',
+		component: './TH06'
 	},
 
 	// DANH MUC HE THONG
